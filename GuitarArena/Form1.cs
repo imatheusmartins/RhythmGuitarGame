@@ -65,6 +65,7 @@ namespace GuitarArena
         private void firstPartSong(object sender, EventArgs e)
         {
 
+            //logica para parar as notas em intervalos especificos do tempo principal
             if (ticks < 12)
             {
                 if (blueNote1.Top > 550)
