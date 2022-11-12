@@ -101,6 +101,8 @@ namespace GuitarArena
             // 
             // greenCheck
             // 
+            this.greenCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.greenCheck.Cursor = System.Windows.Forms.Cursors.Default;
             this.greenCheck.Image = global::GuitarArena.Properties.Resources.checkGreen;
             this.greenCheck.Location = new System.Drawing.Point(188, 550);
             this.greenCheck.Name = "greenCheck";
@@ -204,6 +206,7 @@ namespace GuitarArena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(883, 598);
             this.Controls.Add(this.blueNote3);
             this.Controls.Add(this.blueNote2);
