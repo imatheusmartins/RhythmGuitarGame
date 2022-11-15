@@ -3,55 +3,65 @@ using System.Media;
 using System.Windows.Forms;
 
 
-namespace GuitarArena
+namespace GuitarArena //atualizar a resolução do timer principal
 {
     public partial class GuitarMain : Form
     {
         private int noteSpeed = 10;
-        private int ticks = -3;
+        private double ticks = 0.000;
         private int intervalFirstPart1 = -685; //variavel de controle da sincronicidade
-        private int intervalFirstPart2 = -710; //variavel de controle da sincronicidade
         private SoundPlayer _soundPlayer;
-        
+
         public GuitarMain()
         {
             InitializeComponent();
             SongTimer.Start();
             _soundPlayer = new SoundPlayer("Seven_Nation.wav");
             notesReset();
-
         }
 
+        //TIMER PRINCIPAL
         private void mainGameTimer(object sender, EventArgs e)
         {
-            if (ticks == -3) { 
-                firstPart.Start();
-                NotesFirstPartInit1();
-            }
-            
-            if (ticks == 44)
+            if (ticks == 1.000 || ticks == 71.375)
             {
-                preChorusPartTimer.Start();
-                PreChorusInit();
+                NotesFirstPartInit();
+                firstPart.Start();
             }
-           
-            
-            ticks++;
-            textTeste.Text = ticks.ToString();
-            if(ticks == 0)
+
+            else if (ticks == 49.500 || ticks == 121.000)
+            {
+                firstPart.Stop();
+                NotesFirstPartInit();
+            }
+
+            else if (ticks == 47.875 || ticks == 67.500)
+            {
+                PreChorusInit();
+                preChorusPartTimer.Start();
+            }
+
+            else if (ticks == 57 || ticks == 76)
+                preChorusPartTimer.Stop();
+
+            //-------------------------------------------------------
+
+            ticks += 0.125; //por algum motivo, n é possivel colocar a implementação usando um numero menor que 0.125. Parece que o compilador n tem tempo suficiente de terminar as operacoes booleanas..
+            textTeste.Text = ticks.ToString("0.000");
+            if (ticks == 3.000)
             {
                 _soundPlayer.Play();
             }
-            
+
         }
 
-        //METODOS PARA INICAR AS NOTAS:
+        //METODOS PARA INICAR AS NOTAS: -----
 
-        private void NotesFirstPartInit1()
+        private void NotesFirstPartInit()
         {
             greenNote1.Left = 190;
             redNote1.Left = 280;
-            yellowNote.Left = 368;
+            yellowNote1.Left = 368;
             blueNote1.Left = 465;
             blueNote2.Left = 465;
             blueNote3.Left = 465;
@@ -61,29 +71,10 @@ namespace GuitarArena
             blueNote2.Top = -550;
             blueNote3.Top = -770;
             orangeNote1.Top = -670;
-            yellowNote.Top = -840;
+            yellowNote1.Top = -840;
             redNote1.Top = -970;
             greenNote1.Top = -1290;
         }
-
-        private void NotesFirstPartInit2()
-        {
-            greenNote1.Left = 190;
-            redNote1.Left = 280;
-            yellowNote.Left = 368;
-            blueNote1.Left = 465;
-            blueNote2.Left = 465;
-            blueNote3.Left = 465;
-            orangeNote1.Left = 562;
-
-            blueNote1.Top = -350;
-            blueNote2.Top = -610;
-            blueNote3.Top = -830;
-            orangeNote1.Top = -730;
-            yellowNote.Top = -890;
-            redNote1.Top = -1030;
-            greenNote1.Top = -1350;
-        } //depois do refrao
 
         private void PreChorusInit()
         {
@@ -132,7 +123,7 @@ namespace GuitarArena
             greenNote7.Top = -660;
             greenNote8.Top = -750;
             greenNote9.Top = -840;
-            
+
             redNote2.Top = -860;
             redNote3.Top = -950;
             redNote4.Top = -1040;
@@ -161,13 +152,49 @@ namespace GuitarArena
             orangeNote9.Top = -840;
         }
 
-        //timers:
-
-        private void firstPartSong(object sender, EventArgs e)
+        private void ChorusInit()
         {
 
-            //logica para parar as sequencias em intervalos especificos do tempo principal
-            if (ticks < 43)
+        }
+        //ANIMACOES -------------------------
+
+        private void PreChorusAnimation()
+        {
+            greenNote2.Top += noteSpeed;
+            greenNote3.Top += noteSpeed;
+            greenNote4.Top += noteSpeed;
+            greenNote5.Top += noteSpeed;
+            greenNote6.Top += noteSpeed;
+            greenNote7.Top += noteSpeed;
+
+            redNote2.Top += noteSpeed;
+            redNote3.Top += noteSpeed;
+            redNote4.Top += noteSpeed;
+            redNote5.Top += noteSpeed;
+            redNote6.Top += noteSpeed;
+            redNote7.Top += noteSpeed;
+
+            blueNote4.Top += noteSpeed;
+            blueNote5.Top += noteSpeed;
+            blueNote6.Top += noteSpeed;
+            blueNote7.Top += noteSpeed;
+            blueNote8.Top += noteSpeed;
+            blueNote9.Top += noteSpeed;
+
+            orangeNote2.Top += noteSpeed;
+            orangeNote3.Top += noteSpeed;
+            orangeNote4.Top += noteSpeed;
+            orangeNote5.Top += noteSpeed;
+            orangeNote6.Top += noteSpeed;
+            orangeNote7.Top += noteSpeed;
+        }
+
+        //TIMERS ----------------------------
+
+        private void firstPartTimerSong(object sender, EventArgs e)
+        {
+
+            if ((ticks < 46.000) || (ticks > 70.000 && ticks < 116.750))
             {
                 if (blueNote1.Top > 550)
                     blueNote1.Top = intervalFirstPart1;
@@ -181,8 +208,8 @@ namespace GuitarArena
                 else if (orangeNote1.Top > 550)
                     orangeNote1.Top = intervalFirstPart1;
 
-                else if (yellowNote.Top > 550)
-                    yellowNote.Top = intervalFirstPart1;
+                else if (yellowNote1.Top > 550)
+                    yellowNote1.Top = intervalFirstPart1;
 
                 else if (redNote1.Top > 550)
                     redNote1.Top = intervalFirstPart1;
@@ -192,36 +219,9 @@ namespace GuitarArena
 
             }
 
-            else if (ticks == 67)
-                NotesFirstPartInit2(); //parte apos refrão
-                                       
-            else if(ticks > 67)
-            {
-                if (blueNote1.Top > 560)
-                    blueNote1.Top = intervalFirstPart2;
-
-                else if (blueNote2.Top > 560)
-                    blueNote2.Top = intervalFirstPart2;
-
-                else if (blueNote3.Top > 560)
-                    blueNote3.Top = intervalFirstPart2;
-
-                else if (orangeNote1.Top > 560)
-                    orangeNote1.Top = intervalFirstPart2;
-
-                else if (yellowNote.Top > 560)
-                    yellowNote.Top = intervalFirstPart2;
-
-                else if (redNote1.Top > 560)
-                    redNote1.Top = intervalFirstPart2;
-
-                else if (greenNote1.Top > 560)
-                    greenNote1.Top = intervalFirstPart2;
-            }
-
             greenNote1.Top += noteSpeed;
             redNote1.Top += noteSpeed;
-            yellowNote.Top += noteSpeed;
+            yellowNote1.Top += noteSpeed;
             blueNote1.Top += noteSpeed;
             blueNote2.Top += noteSpeed;
             blueNote3.Top += noteSpeed;
@@ -230,36 +230,33 @@ namespace GuitarArena
 
         private void preChorusTimerSong(object sender, EventArgs e)
         {
-            if (ticks > 43)
-            {
-                greenNote2.Top += noteSpeed;
-                greenNote3.Top += noteSpeed;
-                greenNote4.Top += noteSpeed;
-                greenNote5.Top += noteSpeed;
-                greenNote6.Top += noteSpeed;
-                greenNote7.Top += noteSpeed;
+            greenNote2.Top += noteSpeed;
+            greenNote3.Top += noteSpeed;
+            greenNote4.Top += noteSpeed;
+            greenNote5.Top += noteSpeed;
+            greenNote6.Top += noteSpeed;
+            greenNote7.Top += noteSpeed;
 
-                redNote2.Top += noteSpeed;
-                redNote3.Top += noteSpeed;
-                redNote4.Top += noteSpeed;
-                redNote5.Top += noteSpeed;
-                redNote6.Top += noteSpeed;
-                redNote7.Top += noteSpeed;
+            redNote2.Top += noteSpeed;
+            redNote3.Top += noteSpeed;
+            redNote4.Top += noteSpeed;
+            redNote5.Top += noteSpeed;
+            redNote6.Top += noteSpeed;
+            redNote7.Top += noteSpeed;
 
-                blueNote4.Top += noteSpeed;
-                blueNote5.Top += noteSpeed;
-                blueNote6.Top += noteSpeed;
-                blueNote7.Top += noteSpeed;
-                blueNote8.Top += noteSpeed;
-                blueNote9.Top += noteSpeed;
+            blueNote4.Top += noteSpeed;
+            blueNote5.Top += noteSpeed;
+            blueNote6.Top += noteSpeed;
+            blueNote7.Top += noteSpeed;
+            blueNote8.Top += noteSpeed;
+            blueNote9.Top += noteSpeed;
 
-                orangeNote2.Top += noteSpeed;
-                orangeNote3.Top += noteSpeed;
-                orangeNote4.Top += noteSpeed;
-                orangeNote5.Top += noteSpeed;
-                orangeNote6.Top += noteSpeed;
-                orangeNote7.Top += noteSpeed;
-            }
+            orangeNote2.Top += noteSpeed;
+            orangeNote3.Top += noteSpeed;
+            orangeNote4.Top += noteSpeed;
+            orangeNote5.Top += noteSpeed;
+            orangeNote6.Top += noteSpeed;
+            orangeNote7.Top += noteSpeed;
         }
 
         private void chorusTimerSong(object sender, EventArgs e)
@@ -267,6 +264,7 @@ namespace GuitarArena
 
         }
 
+        
         private void notesReset()
         {
             greenNote1.Left = -500;
@@ -289,7 +287,7 @@ namespace GuitarArena
             redNote8.Left = -500;
             redNote9.Left = -500;
 
-            yellowNote.Left = -500;
+            yellowNote1.Left = -500;
 
             blueNote1.Left = -500;
             blueNote2.Left = -500;
@@ -314,6 +312,6 @@ namespace GuitarArena
             orangeNote9.Left = -500;
         }
 
-        
     }
 }
+
