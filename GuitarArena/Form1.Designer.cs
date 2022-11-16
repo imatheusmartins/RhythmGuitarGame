@@ -109,6 +109,8 @@ namespace GuitarArena
             this.yellowNote4 = new System.Windows.Forms.PictureBox();
             this.yellowNote5 = new System.Windows.Forms.PictureBox();
             this.yellowNote6 = new System.Windows.Forms.PictureBox();
+            this.scoreTxt = new System.Windows.Forms.Label();
+            this.Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.orangeCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowCheck)).BeginInit();
@@ -230,7 +232,7 @@ namespace GuitarArena
             this.greenCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.greenCheck.Cursor = System.Windows.Forms.Cursors.Default;
             this.greenCheck.Image = global::GuitarArena.Properties.Resources.checkGreen;
-            this.greenCheck.Location = new System.Drawing.Point(188, 550);
+            this.greenCheck.Location = new System.Drawing.Point(192, 550);
             this.greenCheck.Name = "greenCheck";
             this.greenCheck.Size = new System.Drawing.Size(70, 35);
             this.greenCheck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -240,7 +242,7 @@ namespace GuitarArena
             // orangeNote1
             // 
             this.orangeNote1.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote1.Location = new System.Drawing.Point(316, 469);
+            this.orangeNote1.Location = new System.Drawing.Point(342, 485);
             this.orangeNote1.Name = "orangeNote1";
             this.orangeNote1.Size = new System.Drawing.Size(70, 35);
             this.orangeNote1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +252,7 @@ namespace GuitarArena
             // blueNote1
             // 
             this.blueNote1.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote1.Location = new System.Drawing.Point(240, 469);
+            this.blueNote1.Location = new System.Drawing.Point(266, 485);
             this.blueNote1.Name = "blueNote1";
             this.blueNote1.Size = new System.Drawing.Size(70, 35);
             this.blueNote1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,7 +262,7 @@ namespace GuitarArena
             // yellowNote1
             // 
             this.yellowNote1.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
-            this.yellowNote1.Location = new System.Drawing.Point(164, 469);
+            this.yellowNote1.Location = new System.Drawing.Point(190, 485);
             this.yellowNote1.Name = "yellowNote1";
             this.yellowNote1.Size = new System.Drawing.Size(70, 35);
             this.yellowNote1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -270,7 +272,7 @@ namespace GuitarArena
             // redNote1
             // 
             this.redNote1.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote1.Location = new System.Drawing.Point(88, 469);
+            this.redNote1.Location = new System.Drawing.Point(114, 485);
             this.redNote1.Name = "redNote1";
             this.redNote1.Size = new System.Drawing.Size(70, 35);
             this.redNote1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,7 +282,7 @@ namespace GuitarArena
             // greenNote1
             // 
             this.greenNote1.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote1.Location = new System.Drawing.Point(12, 469);
+            this.greenNote1.Location = new System.Drawing.Point(38, 485);
             this.greenNote1.Name = "greenNote1";
             this.greenNote1.Size = new System.Drawing.Size(70, 35);
             this.greenNote1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -311,7 +313,7 @@ namespace GuitarArena
             // blueNote2
             // 
             this.blueNote2.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote2.Location = new System.Drawing.Point(240, 428);
+            this.blueNote2.Location = new System.Drawing.Point(266, 444);
             this.blueNote2.Name = "blueNote2";
             this.blueNote2.Size = new System.Drawing.Size(70, 35);
             this.blueNote2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,7 +323,7 @@ namespace GuitarArena
             // blueNote3
             // 
             this.blueNote3.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote3.Location = new System.Drawing.Point(240, 387);
+            this.blueNote3.Location = new System.Drawing.Point(266, 403);
             this.blueNote3.Name = "blueNote3";
             this.blueNote3.Size = new System.Drawing.Size(70, 35);
             this.blueNote3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,7 +343,7 @@ namespace GuitarArena
             // blueNote4
             // 
             this.blueNote4.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote4.Location = new System.Drawing.Point(240, 346);
+            this.blueNote4.Location = new System.Drawing.Point(266, 362);
             this.blueNote4.Name = "blueNote4";
             this.blueNote4.Size = new System.Drawing.Size(70, 35);
             this.blueNote4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -351,7 +353,7 @@ namespace GuitarArena
             // blueNote5
             // 
             this.blueNote5.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote5.Location = new System.Drawing.Point(240, 305);
+            this.blueNote5.Location = new System.Drawing.Point(266, 321);
             this.blueNote5.Name = "blueNote5";
             this.blueNote5.Size = new System.Drawing.Size(70, 35);
             this.blueNote5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -361,7 +363,7 @@ namespace GuitarArena
             // blueNote6
             // 
             this.blueNote6.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote6.Location = new System.Drawing.Point(240, 264);
+            this.blueNote6.Location = new System.Drawing.Point(266, 280);
             this.blueNote6.Name = "blueNote6";
             this.blueNote6.Size = new System.Drawing.Size(70, 35);
             this.blueNote6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -371,7 +373,7 @@ namespace GuitarArena
             // orangeNote2
             // 
             this.orangeNote2.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote2.Location = new System.Drawing.Point(316, 428);
+            this.orangeNote2.Location = new System.Drawing.Point(342, 444);
             this.orangeNote2.Name = "orangeNote2";
             this.orangeNote2.Size = new System.Drawing.Size(70, 35);
             this.orangeNote2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -381,7 +383,7 @@ namespace GuitarArena
             // orangeNote5
             // 
             this.orangeNote5.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote5.Location = new System.Drawing.Point(316, 305);
+            this.orangeNote5.Location = new System.Drawing.Point(342, 321);
             this.orangeNote5.Name = "orangeNote5";
             this.orangeNote5.Size = new System.Drawing.Size(70, 35);
             this.orangeNote5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -391,7 +393,7 @@ namespace GuitarArena
             // orangeNote3
             // 
             this.orangeNote3.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote3.Location = new System.Drawing.Point(316, 387);
+            this.orangeNote3.Location = new System.Drawing.Point(342, 403);
             this.orangeNote3.Name = "orangeNote3";
             this.orangeNote3.Size = new System.Drawing.Size(70, 35);
             this.orangeNote3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -401,7 +403,7 @@ namespace GuitarArena
             // orangeNote4
             // 
             this.orangeNote4.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote4.Location = new System.Drawing.Point(316, 346);
+            this.orangeNote4.Location = new System.Drawing.Point(342, 362);
             this.orangeNote4.Name = "orangeNote4";
             this.orangeNote4.Size = new System.Drawing.Size(70, 35);
             this.orangeNote4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -411,7 +413,7 @@ namespace GuitarArena
             // orangeNote6
             // 
             this.orangeNote6.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote6.Location = new System.Drawing.Point(316, 264);
+            this.orangeNote6.Location = new System.Drawing.Point(342, 280);
             this.orangeNote6.Name = "orangeNote6";
             this.orangeNote6.Size = new System.Drawing.Size(70, 35);
             this.orangeNote6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -421,7 +423,7 @@ namespace GuitarArena
             // redNote2
             // 
             this.redNote2.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote2.Location = new System.Drawing.Point(88, 428);
+            this.redNote2.Location = new System.Drawing.Point(114, 444);
             this.redNote2.Name = "redNote2";
             this.redNote2.Size = new System.Drawing.Size(70, 35);
             this.redNote2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -431,7 +433,7 @@ namespace GuitarArena
             // redNote3
             // 
             this.redNote3.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote3.Location = new System.Drawing.Point(88, 387);
+            this.redNote3.Location = new System.Drawing.Point(114, 403);
             this.redNote3.Name = "redNote3";
             this.redNote3.Size = new System.Drawing.Size(70, 35);
             this.redNote3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -441,7 +443,7 @@ namespace GuitarArena
             // redNote4
             // 
             this.redNote4.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote4.Location = new System.Drawing.Point(88, 346);
+            this.redNote4.Location = new System.Drawing.Point(114, 362);
             this.redNote4.Name = "redNote4";
             this.redNote4.Size = new System.Drawing.Size(70, 35);
             this.redNote4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -451,7 +453,7 @@ namespace GuitarArena
             // redNote5
             // 
             this.redNote5.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote5.Location = new System.Drawing.Point(88, 305);
+            this.redNote5.Location = new System.Drawing.Point(114, 321);
             this.redNote5.Name = "redNote5";
             this.redNote5.Size = new System.Drawing.Size(70, 35);
             this.redNote5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -461,7 +463,7 @@ namespace GuitarArena
             // redNote6
             // 
             this.redNote6.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote6.Location = new System.Drawing.Point(88, 264);
+            this.redNote6.Location = new System.Drawing.Point(114, 280);
             this.redNote6.Name = "redNote6";
             this.redNote6.Size = new System.Drawing.Size(70, 35);
             this.redNote6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -471,7 +473,7 @@ namespace GuitarArena
             // greenNote2
             // 
             this.greenNote2.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote2.Location = new System.Drawing.Point(12, 428);
+            this.greenNote2.Location = new System.Drawing.Point(38, 444);
             this.greenNote2.Name = "greenNote2";
             this.greenNote2.Size = new System.Drawing.Size(70, 35);
             this.greenNote2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -481,7 +483,7 @@ namespace GuitarArena
             // greenNote3
             // 
             this.greenNote3.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote3.Location = new System.Drawing.Point(12, 387);
+            this.greenNote3.Location = new System.Drawing.Point(38, 403);
             this.greenNote3.Name = "greenNote3";
             this.greenNote3.Size = new System.Drawing.Size(70, 35);
             this.greenNote3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -491,7 +493,7 @@ namespace GuitarArena
             // greenNote5
             // 
             this.greenNote5.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote5.Location = new System.Drawing.Point(12, 305);
+            this.greenNote5.Location = new System.Drawing.Point(38, 321);
             this.greenNote5.Name = "greenNote5";
             this.greenNote5.Size = new System.Drawing.Size(70, 35);
             this.greenNote5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -501,7 +503,7 @@ namespace GuitarArena
             // greenNote4
             // 
             this.greenNote4.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote4.Location = new System.Drawing.Point(12, 346);
+            this.greenNote4.Location = new System.Drawing.Point(38, 362);
             this.greenNote4.Name = "greenNote4";
             this.greenNote4.Size = new System.Drawing.Size(70, 35);
             this.greenNote4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -511,7 +513,7 @@ namespace GuitarArena
             // greenNote6
             // 
             this.greenNote6.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote6.Location = new System.Drawing.Point(12, 264);
+            this.greenNote6.Location = new System.Drawing.Point(38, 280);
             this.greenNote6.Name = "greenNote6";
             this.greenNote6.Size = new System.Drawing.Size(70, 35);
             this.greenNote6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -521,7 +523,7 @@ namespace GuitarArena
             // blueNote7
             // 
             this.blueNote7.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote7.Location = new System.Drawing.Point(240, 223);
+            this.blueNote7.Location = new System.Drawing.Point(266, 239);
             this.blueNote7.Name = "blueNote7";
             this.blueNote7.Size = new System.Drawing.Size(70, 35);
             this.blueNote7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -531,7 +533,7 @@ namespace GuitarArena
             // blueNote8
             // 
             this.blueNote8.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote8.Location = new System.Drawing.Point(240, 182);
+            this.blueNote8.Location = new System.Drawing.Point(266, 198);
             this.blueNote8.Name = "blueNote8";
             this.blueNote8.Size = new System.Drawing.Size(70, 35);
             this.blueNote8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -541,7 +543,7 @@ namespace GuitarArena
             // blueNote9
             // 
             this.blueNote9.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote9.Location = new System.Drawing.Point(240, 141);
+            this.blueNote9.Location = new System.Drawing.Point(266, 157);
             this.blueNote9.Name = "blueNote9";
             this.blueNote9.Size = new System.Drawing.Size(70, 35);
             this.blueNote9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -551,7 +553,7 @@ namespace GuitarArena
             // greenNote7
             // 
             this.greenNote7.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote7.Location = new System.Drawing.Point(12, 223);
+            this.greenNote7.Location = new System.Drawing.Point(38, 239);
             this.greenNote7.Name = "greenNote7";
             this.greenNote7.Size = new System.Drawing.Size(70, 35);
             this.greenNote7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -561,7 +563,7 @@ namespace GuitarArena
             // redNote7
             // 
             this.redNote7.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote7.Location = new System.Drawing.Point(88, 223);
+            this.redNote7.Location = new System.Drawing.Point(114, 239);
             this.redNote7.Name = "redNote7";
             this.redNote7.Size = new System.Drawing.Size(70, 35);
             this.redNote7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -571,7 +573,7 @@ namespace GuitarArena
             // orangeNote7
             // 
             this.orangeNote7.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote7.Location = new System.Drawing.Point(316, 223);
+            this.orangeNote7.Location = new System.Drawing.Point(342, 239);
             this.orangeNote7.Name = "orangeNote7";
             this.orangeNote7.Size = new System.Drawing.Size(70, 35);
             this.orangeNote7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -581,7 +583,7 @@ namespace GuitarArena
             // greenNote8
             // 
             this.greenNote8.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote8.Location = new System.Drawing.Point(12, 182);
+            this.greenNote8.Location = new System.Drawing.Point(38, 198);
             this.greenNote8.Name = "greenNote8";
             this.greenNote8.Size = new System.Drawing.Size(70, 35);
             this.greenNote8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -591,7 +593,7 @@ namespace GuitarArena
             // greenNote9
             // 
             this.greenNote9.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote9.Location = new System.Drawing.Point(12, 141);
+            this.greenNote9.Location = new System.Drawing.Point(38, 157);
             this.greenNote9.Name = "greenNote9";
             this.greenNote9.Size = new System.Drawing.Size(70, 35);
             this.greenNote9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -601,7 +603,7 @@ namespace GuitarArena
             // redNote8
             // 
             this.redNote8.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote8.Location = new System.Drawing.Point(88, 182);
+            this.redNote8.Location = new System.Drawing.Point(114, 198);
             this.redNote8.Name = "redNote8";
             this.redNote8.Size = new System.Drawing.Size(70, 35);
             this.redNote8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -611,7 +613,7 @@ namespace GuitarArena
             // redNote9
             // 
             this.redNote9.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote9.Location = new System.Drawing.Point(88, 141);
+            this.redNote9.Location = new System.Drawing.Point(114, 157);
             this.redNote9.Name = "redNote9";
             this.redNote9.Size = new System.Drawing.Size(70, 35);
             this.redNote9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -621,7 +623,7 @@ namespace GuitarArena
             // blueNote10
             // 
             this.blueNote10.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote10.Location = new System.Drawing.Point(240, 103);
+            this.blueNote10.Location = new System.Drawing.Point(266, 119);
             this.blueNote10.Name = "blueNote10";
             this.blueNote10.Size = new System.Drawing.Size(70, 35);
             this.blueNote10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -631,7 +633,7 @@ namespace GuitarArena
             // blueNote11
             // 
             this.blueNote11.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote11.Location = new System.Drawing.Point(240, 62);
+            this.blueNote11.Location = new System.Drawing.Point(266, 78);
             this.blueNote11.Name = "blueNote11";
             this.blueNote11.Size = new System.Drawing.Size(70, 35);
             this.blueNote11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -641,7 +643,7 @@ namespace GuitarArena
             // orangeNote8
             // 
             this.orangeNote8.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote8.Location = new System.Drawing.Point(316, 182);
+            this.orangeNote8.Location = new System.Drawing.Point(342, 198);
             this.orangeNote8.Name = "orangeNote8";
             this.orangeNote8.Size = new System.Drawing.Size(70, 35);
             this.orangeNote8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -651,7 +653,7 @@ namespace GuitarArena
             // orangeNote9
             // 
             this.orangeNote9.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote9.Location = new System.Drawing.Point(316, 141);
+            this.orangeNote9.Location = new System.Drawing.Point(342, 157);
             this.orangeNote9.Name = "orangeNote9";
             this.orangeNote9.Size = new System.Drawing.Size(70, 35);
             this.orangeNote9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -661,7 +663,7 @@ namespace GuitarArena
             // greenNote10
             // 
             this.greenNote10.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote10.Location = new System.Drawing.Point(486, 469);
+            this.greenNote10.Location = new System.Drawing.Point(983, 469);
             this.greenNote10.Name = "greenNote10";
             this.greenNote10.Size = new System.Drawing.Size(70, 35);
             this.greenNote10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -671,7 +673,7 @@ namespace GuitarArena
             // greenNote11
             // 
             this.greenNote11.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote11.Location = new System.Drawing.Point(486, 428);
+            this.greenNote11.Location = new System.Drawing.Point(983, 428);
             this.greenNote11.Name = "greenNote11";
             this.greenNote11.Size = new System.Drawing.Size(70, 35);
             this.greenNote11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -681,7 +683,7 @@ namespace GuitarArena
             // greenNote12
             // 
             this.greenNote12.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote12.Location = new System.Drawing.Point(486, 387);
+            this.greenNote12.Location = new System.Drawing.Point(983, 387);
             this.greenNote12.Name = "greenNote12";
             this.greenNote12.Size = new System.Drawing.Size(70, 35);
             this.greenNote12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -691,7 +693,7 @@ namespace GuitarArena
             // greenNote13
             // 
             this.greenNote13.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote13.Location = new System.Drawing.Point(486, 346);
+            this.greenNote13.Location = new System.Drawing.Point(983, 346);
             this.greenNote13.Name = "greenNote13";
             this.greenNote13.Size = new System.Drawing.Size(70, 35);
             this.greenNote13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -701,7 +703,7 @@ namespace GuitarArena
             // greenNote14
             // 
             this.greenNote14.Image = global::GuitarArena.Properties.Resources.greenbuttons;
-            this.greenNote14.Location = new System.Drawing.Point(486, 305);
+            this.greenNote14.Location = new System.Drawing.Point(983, 305);
             this.greenNote14.Name = "greenNote14";
             this.greenNote14.Size = new System.Drawing.Size(70, 35);
             this.greenNote14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -711,7 +713,7 @@ namespace GuitarArena
             // redNote10
             // 
             this.redNote10.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote10.Location = new System.Drawing.Point(562, 469);
+            this.redNote10.Location = new System.Drawing.Point(1059, 469);
             this.redNote10.Name = "redNote10";
             this.redNote10.Size = new System.Drawing.Size(70, 35);
             this.redNote10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -721,7 +723,7 @@ namespace GuitarArena
             // redNote11
             // 
             this.redNote11.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote11.Location = new System.Drawing.Point(562, 428);
+            this.redNote11.Location = new System.Drawing.Point(1059, 428);
             this.redNote11.Name = "redNote11";
             this.redNote11.Size = new System.Drawing.Size(70, 35);
             this.redNote11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -731,7 +733,7 @@ namespace GuitarArena
             // redNote12
             // 
             this.redNote12.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote12.Location = new System.Drawing.Point(562, 387);
+            this.redNote12.Location = new System.Drawing.Point(1059, 387);
             this.redNote12.Name = "redNote12";
             this.redNote12.Size = new System.Drawing.Size(70, 35);
             this.redNote12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -741,7 +743,7 @@ namespace GuitarArena
             // redNote13
             // 
             this.redNote13.Image = global::GuitarArena.Properties.Resources.redbuttons;
-            this.redNote13.Location = new System.Drawing.Point(562, 346);
+            this.redNote13.Location = new System.Drawing.Point(1059, 346);
             this.redNote13.Name = "redNote13";
             this.redNote13.Size = new System.Drawing.Size(70, 35);
             this.redNote13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -751,7 +753,7 @@ namespace GuitarArena
             // yellowNote2
             // 
             this.yellowNote2.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
-            this.yellowNote2.Location = new System.Drawing.Point(638, 469);
+            this.yellowNote2.Location = new System.Drawing.Point(1135, 469);
             this.yellowNote2.Name = "yellowNote2";
             this.yellowNote2.Size = new System.Drawing.Size(70, 35);
             this.yellowNote2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -761,7 +763,7 @@ namespace GuitarArena
             // blueNote12
             // 
             this.blueNote12.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote12.Location = new System.Drawing.Point(714, 469);
+            this.blueNote12.Location = new System.Drawing.Point(1211, 469);
             this.blueNote12.Name = "blueNote12";
             this.blueNote12.Size = new System.Drawing.Size(70, 35);
             this.blueNote12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -771,7 +773,7 @@ namespace GuitarArena
             // orangeNote10
             // 
             this.orangeNote10.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote10.Location = new System.Drawing.Point(790, 469);
+            this.orangeNote10.Location = new System.Drawing.Point(1287, 469);
             this.orangeNote10.Name = "orangeNote10";
             this.orangeNote10.Size = new System.Drawing.Size(70, 35);
             this.orangeNote10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -781,7 +783,7 @@ namespace GuitarArena
             // blueNote13
             // 
             this.blueNote13.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote13.Location = new System.Drawing.Point(714, 428);
+            this.blueNote13.Location = new System.Drawing.Point(1211, 428);
             this.blueNote13.Name = "blueNote13";
             this.blueNote13.Size = new System.Drawing.Size(70, 35);
             this.blueNote13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -791,7 +793,7 @@ namespace GuitarArena
             // blueNote14
             // 
             this.blueNote14.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote14.Location = new System.Drawing.Point(714, 387);
+            this.blueNote14.Location = new System.Drawing.Point(1211, 387);
             this.blueNote14.Name = "blueNote14";
             this.blueNote14.Size = new System.Drawing.Size(70, 35);
             this.blueNote14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -801,7 +803,7 @@ namespace GuitarArena
             // blueNote15
             // 
             this.blueNote15.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote15.Location = new System.Drawing.Point(714, 346);
+            this.blueNote15.Location = new System.Drawing.Point(1211, 346);
             this.blueNote15.Name = "blueNote15";
             this.blueNote15.Size = new System.Drawing.Size(70, 35);
             this.blueNote15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -811,7 +813,7 @@ namespace GuitarArena
             // blueNote16
             // 
             this.blueNote16.Image = global::GuitarArena.Properties.Resources.blue_buttons;
-            this.blueNote16.Location = new System.Drawing.Point(714, 305);
+            this.blueNote16.Location = new System.Drawing.Point(1211, 305);
             this.blueNote16.Name = "blueNote16";
             this.blueNote16.Size = new System.Drawing.Size(70, 35);
             this.blueNote16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -821,7 +823,7 @@ namespace GuitarArena
             // orangeNote11
             // 
             this.orangeNote11.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote11.Location = new System.Drawing.Point(790, 428);
+            this.orangeNote11.Location = new System.Drawing.Point(1287, 428);
             this.orangeNote11.Name = "orangeNote11";
             this.orangeNote11.Size = new System.Drawing.Size(70, 35);
             this.orangeNote11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -831,7 +833,7 @@ namespace GuitarArena
             // orangeNote14
             // 
             this.orangeNote14.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote14.Location = new System.Drawing.Point(790, 305);
+            this.orangeNote14.Location = new System.Drawing.Point(1287, 305);
             this.orangeNote14.Name = "orangeNote14";
             this.orangeNote14.Size = new System.Drawing.Size(70, 35);
             this.orangeNote14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -841,7 +843,7 @@ namespace GuitarArena
             // orangeNote15
             // 
             this.orangeNote15.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote15.Location = new System.Drawing.Point(790, 264);
+            this.orangeNote15.Location = new System.Drawing.Point(1287, 264);
             this.orangeNote15.Name = "orangeNote15";
             this.orangeNote15.Size = new System.Drawing.Size(70, 35);
             this.orangeNote15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -851,7 +853,7 @@ namespace GuitarArena
             // orangeNote16
             // 
             this.orangeNote16.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote16.Location = new System.Drawing.Point(790, 223);
+            this.orangeNote16.Location = new System.Drawing.Point(1287, 223);
             this.orangeNote16.Name = "orangeNote16";
             this.orangeNote16.Size = new System.Drawing.Size(70, 35);
             this.orangeNote16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -861,7 +863,7 @@ namespace GuitarArena
             // orangeNote17
             // 
             this.orangeNote17.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote17.Location = new System.Drawing.Point(790, 182);
+            this.orangeNote17.Location = new System.Drawing.Point(1287, 182);
             this.orangeNote17.Name = "orangeNote17";
             this.orangeNote17.Size = new System.Drawing.Size(70, 35);
             this.orangeNote17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -871,7 +873,7 @@ namespace GuitarArena
             // orangeNote18
             // 
             this.orangeNote18.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote18.Location = new System.Drawing.Point(790, 141);
+            this.orangeNote18.Location = new System.Drawing.Point(1287, 141);
             this.orangeNote18.Name = "orangeNote18";
             this.orangeNote18.Size = new System.Drawing.Size(70, 35);
             this.orangeNote18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -881,7 +883,7 @@ namespace GuitarArena
             // orangeNote12
             // 
             this.orangeNote12.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote12.Location = new System.Drawing.Point(790, 387);
+            this.orangeNote12.Location = new System.Drawing.Point(1287, 387);
             this.orangeNote12.Name = "orangeNote12";
             this.orangeNote12.Size = new System.Drawing.Size(70, 35);
             this.orangeNote12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -891,7 +893,7 @@ namespace GuitarArena
             // orangeNote13
             // 
             this.orangeNote13.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote13.Location = new System.Drawing.Point(790, 346);
+            this.orangeNote13.Location = new System.Drawing.Point(1287, 346);
             this.orangeNote13.Name = "orangeNote13";
             this.orangeNote13.Size = new System.Drawing.Size(70, 35);
             this.orangeNote13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -901,7 +903,7 @@ namespace GuitarArena
             // orangeNote19
             // 
             this.orangeNote19.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote19.Location = new System.Drawing.Point(790, 103);
+            this.orangeNote19.Location = new System.Drawing.Point(1287, 103);
             this.orangeNote19.Name = "orangeNote19";
             this.orangeNote19.Size = new System.Drawing.Size(70, 35);
             this.orangeNote19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -911,7 +913,7 @@ namespace GuitarArena
             // orangeNote20
             // 
             this.orangeNote20.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote20.Location = new System.Drawing.Point(790, 62);
+            this.orangeNote20.Location = new System.Drawing.Point(1287, 62);
             this.orangeNote20.Name = "orangeNote20";
             this.orangeNote20.Size = new System.Drawing.Size(70, 35);
             this.orangeNote20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -921,7 +923,7 @@ namespace GuitarArena
             // yellowNote3
             // 
             this.yellowNote3.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
-            this.yellowNote3.Location = new System.Drawing.Point(638, 428);
+            this.yellowNote3.Location = new System.Drawing.Point(1135, 428);
             this.yellowNote3.Name = "yellowNote3";
             this.yellowNote3.Size = new System.Drawing.Size(70, 35);
             this.yellowNote3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -931,7 +933,7 @@ namespace GuitarArena
             // yellowNote4
             // 
             this.yellowNote4.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
-            this.yellowNote4.Location = new System.Drawing.Point(638, 387);
+            this.yellowNote4.Location = new System.Drawing.Point(1135, 387);
             this.yellowNote4.Name = "yellowNote4";
             this.yellowNote4.Size = new System.Drawing.Size(70, 35);
             this.yellowNote4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -941,7 +943,7 @@ namespace GuitarArena
             // yellowNote5
             // 
             this.yellowNote5.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
-            this.yellowNote5.Location = new System.Drawing.Point(638, 346);
+            this.yellowNote5.Location = new System.Drawing.Point(1135, 346);
             this.yellowNote5.Name = "yellowNote5";
             this.yellowNote5.Size = new System.Drawing.Size(70, 35);
             this.yellowNote5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -951,19 +953,40 @@ namespace GuitarArena
             // yellowNote6
             // 
             this.yellowNote6.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
-            this.yellowNote6.Location = new System.Drawing.Point(638, 305);
+            this.yellowNote6.Location = new System.Drawing.Point(1135, 305);
             this.yellowNote6.Name = "yellowNote6";
             this.yellowNote6.Size = new System.Drawing.Size(70, 35);
             this.yellowNote6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.yellowNote6.TabIndex = 2;
             this.yellowNote6.TabStop = false;
             // 
+            // scoreTxt
+            // 
+            this.scoreTxt.AutoSize = true;
+            this.scoreTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreTxt.Location = new System.Drawing.Point(746, 473);
+            this.scoreTxt.Name = "scoreTxt";
+            this.scoreTxt.Size = new System.Drawing.Size(29, 31);
+            this.scoreTxt.TabIndex = 19;
+            this.scoreTxt.Text = "0";
+            // 
+            // Label
+            // 
+            this.Label.AutoSize = true;
+            this.Label.Location = new System.Drawing.Point(696, 488);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(44, 13);
+            this.Label.TabIndex = 21;
+            this.Label.Text = "SCORE";
+            // 
             // GuitarMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(872, 620);
+            this.ClientSize = new System.Drawing.Size(1500, 653);
+            this.Controls.Add(this.Label);
+            this.Controls.Add(this.scoreTxt);
             this.Controls.Add(this.orangeNote13);
             this.Controls.Add(this.orangeNote4);
             this.Controls.Add(this.orangeNote12);
@@ -1041,6 +1064,8 @@ namespace GuitarArena
             this.Controls.Add(this.greenCheck);
             this.Name = "GuitarMain";
             this.Text = "Guitar";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.orangeCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowCheck)).EndInit();
@@ -1201,6 +1226,8 @@ namespace GuitarArena
         private System.Windows.Forms.PictureBox yellowNote4;
         private System.Windows.Forms.PictureBox yellowNote5;
         private System.Windows.Forms.PictureBox yellowNote6;
+        private System.Windows.Forms.Label scoreTxt;
+        private System.Windows.Forms.Label Label;
     }
 }
 

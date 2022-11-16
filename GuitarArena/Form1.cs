@@ -9,8 +9,11 @@ namespace GuitarArena //atualizar a resolução do timer principal
     {
         private int noteSpeed = 10;
         private double ticks = 0.000;
-        private int intervalFirstPart1 = -685; //variavel de controle da sincronicidade
+        private int intervalFirstPart1 = -660; //variavel de controle da sincronicidade
         private SoundPlayer _soundPlayer;
+
+        private int PlayerPoints = 50;
+        bool aPress, sPress, jPress, kPress, lPress;
 
         public GuitarMain()
         {
@@ -23,7 +26,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
         //TIMER PRINCIPAL
         private void mainGameTimer(object sender, EventArgs e)
         {
-            if (ticks == 1.000 || ticks == 71.375)
+            if (ticks == 1.000 || ticks == 71.500)
             {
                 NotesFirstPartInit();
                 firstPart.Start();
@@ -44,18 +47,28 @@ namespace GuitarArena //atualizar a resolução do timer principal
             else if (ticks == 57 || ticks == 76)
                 preChorusPartTimer.Stop();
 
+            else if (ticks == 51.625)
+                ChorusInit();
+                chorusPartTimer.Start();
+            
+
             //-------------------------------------------------------
 
-            ticks += 0.125; //por algum motivo, n é possivel colocar a implementação usando um numero menor que 0.125. Parece que o compilador n tem tempo suficiente de terminar as operacoes booleanas..
+            ticks += 0.125; //por algum motivo, n é possivel colocar a implementação usando um numero
+                            //menor que 0.125. Parece que o compilador n tem tempo suficiente de terminar as operacoes booleanas..
             textTeste.Text = ticks.ToString("0.000");
-            if (ticks == 3.000)
+            if (ticks == 3.125)
             {
                 _soundPlayer.Play();
             }
 
+            //LOGICA PARA SCORE DO JOGADOR
+
+            scorePlayer();
+
         }
 
-        //METODOS PARA INICAR AS NOTAS: -----
+        //METODOS PARA INICIAR AS NOTAS: -----
 
         private void NotesFirstPartInit()
         {
@@ -154,39 +167,96 @@ namespace GuitarArena //atualizar a resolução do timer principal
 
         private void ChorusInit()
         {
+            //LEFT ---------------------------------------
+            #region left;
 
-        }
-        //ANIMACOES -------------------------
+            greenNote10.Left = 190;
+            greenNote11.Left = 190;
+            greenNote12.Left = 190;
+            greenNote13.Left = 190;
+            greenNote14.Left = 190;
 
-        private void PreChorusAnimation()
-        {
-            greenNote2.Top += noteSpeed;
-            greenNote3.Top += noteSpeed;
-            greenNote4.Top += noteSpeed;
-            greenNote5.Top += noteSpeed;
-            greenNote6.Top += noteSpeed;
-            greenNote7.Top += noteSpeed;
+            redNote10.Left = 280;
+            redNote11.Left = 280;
+            redNote12.Left = 280;
+            redNote13.Left = 280;
 
-            redNote2.Top += noteSpeed;
-            redNote3.Top += noteSpeed;
-            redNote4.Top += noteSpeed;
-            redNote5.Top += noteSpeed;
-            redNote6.Top += noteSpeed;
-            redNote7.Top += noteSpeed;
+            yellowNote2.Left = 368;
+            yellowNote3.Left = 368;
+            yellowNote4.Left = 368;
+            yellowNote5.Left = 368;
+            yellowNote6.Left = 368;
+            
+            blueNote12.Left = 465;
+            blueNote13.Left = 465;
+            blueNote14.Left = 465;
+            blueNote15.Left = 465;
+            blueNote16.Left = 465;
+            
+            orangeNote10.Left = 560;
+            orangeNote11.Left = 560;
+            orangeNote12.Left = 560;
+            orangeNote13.Left = 560;
+            orangeNote14.Left = 560;
+            orangeNote15.Left = 560;
+            orangeNote16.Left = 560;
+            orangeNote17.Left = 560;
+            orangeNote18.Left = 560;
+            orangeNote19.Left = 560;
+            orangeNote20.Left = 560;
 
-            blueNote4.Top += noteSpeed;
-            blueNote5.Top += noteSpeed;
-            blueNote6.Top += noteSpeed;
-            blueNote7.Top += noteSpeed;
-            blueNote8.Top += noteSpeed;
-            blueNote9.Top += noteSpeed;
+            #endregion;
 
-            orangeNote2.Top += noteSpeed;
-            orangeNote3.Top += noteSpeed;
-            orangeNote4.Top += noteSpeed;
-            orangeNote5.Top += noteSpeed;
-            orangeNote6.Top += noteSpeed;
-            orangeNote7.Top += noteSpeed;
+            //TOP ----------------------------------------
+            orangeNote10.Top = -290;    //1
+            blueNote12.Top = -290;
+
+            orangeNote11.Top = -550;    //2
+            blueNote13.Top = -550;
+
+            redNote10.Top = -670;       //3
+            greenNote10.Top = -670;
+
+            yellowNote2.Top = -770;     //4
+
+            yellowNote3.Top = -840;     //5
+            orangeNote12.Top = -840;
+
+            greenNote11.Top = -970;     //6
+
+            redNote11.Top = -1290;      //7
+
+            orangeNote13.Top = -1390;   //8
+                                        
+            orangeNote14.Top = -1490;   //9
+
+            //-------------------------------
+
+            orangeNote15.Top = -1540;   //1
+            blueNote14.Top = -1540;
+
+            orangeNote16.Top = -1800;   //2
+            blueNote15.Top = -1800;
+
+            orangeNote17.Top = -1920;   //3
+            yellowNote4.Top = -1920;
+
+            greenNote12.Top = -2020;    //4
+
+            redNote12.Top = -2090;      //5
+
+            orangeNote18.Top = -2220;   //6
+            yellowNote5.Top = -2220;
+
+            greenNote13.Top = -2327;    //7
+
+            orangeNote19.Top = -2434;   //8
+
+            blueNote16.Top = -2540;     //9
+            yellowNote6.Top = -2540;
+
+            greenNote14.Top = -2640;    //10
+            redNote13.Top = -2640;      
         }
 
         //TIMERS ----------------------------
@@ -196,25 +266,25 @@ namespace GuitarArena //atualizar a resolução do timer principal
 
             if ((ticks < 46.000) || (ticks > 70.000 && ticks < 116.750))
             {
-                if (blueNote1.Top > 550)
+                if (blueNote1.Top > 570)
                     blueNote1.Top = intervalFirstPart1;
 
-                else if (blueNote2.Top > 550)
+                else if (blueNote2.Top > 570)
                     blueNote2.Top = intervalFirstPart1;
 
-                else if (blueNote3.Top > 550)
+                else if (blueNote3.Top > 570)
                     blueNote3.Top = intervalFirstPart1;
 
-                else if (orangeNote1.Top > 550)
+                else if (orangeNote1.Top > 570)
                     orangeNote1.Top = intervalFirstPart1;
 
-                else if (yellowNote1.Top > 550)
+                else if (yellowNote1.Top > 570)
                     yellowNote1.Top = intervalFirstPart1;
 
-                else if (redNote1.Top > 550)
+                else if (redNote1.Top > 570)
                     redNote1.Top = intervalFirstPart1;
 
-                else if (greenNote1.Top > 550)
+                else if (greenNote1.Top > 570)
                     greenNote1.Top = intervalFirstPart1;
 
             }
@@ -261,57 +331,307 @@ namespace GuitarArena //atualizar a resolução do timer principal
 
         private void chorusTimerSong(object sender, EventArgs e)
         {
+            if (ticks < 62.000)
+            {
+                if (orangeNote10.Top > 570)
+                {
+                    orangeNote10.Top = -1930;
+                    blueNote12.Top = -1930;
+                }
 
+                else if (orangeNote11.Top > 570)
+                {
+                    orangeNote11.Top = -1930;
+                    blueNote13.Top = -1930;
+                }
+
+                else if (redNote10.Top > 570)
+                {
+                    redNote10.Top = -1930;
+                    greenNote10.Top = -1930;
+                }
+
+                else if (yellowNote2.Top > 570)
+                    yellowNote2.Top = -1930;
+
+                else if (yellowNote3.Top > 570)
+                {
+                    yellowNote3.Top = -1930;
+                    orangeNote12.Top = -1930;
+                }
+
+                else if (greenNote11.Top > 570)
+                    greenNote11.Top = -1930;
+
+                else if (redNote11.Top > 570)
+                    redNote11.Top = -1930;
+
+                else if (orangeNote13.Top > 570)
+                    orangeNote13.Top = -1930;
+
+                else if (orangeNote14.Top > 570)
+                    orangeNote14.Top = -1930;
+
+                //---
+
+                else if (orangeNote15.Top > 570)
+                {
+                    orangeNote15.Top = -1930;
+                    blueNote14.Top = -1930;
+                }
+
+                else if (orangeNote16.Top > 570)
+                {
+                    orangeNote16.Top = -1930;
+                    blueNote15.Top = -1930;
+                }
+
+                else if (orangeNote17.Top > 570)
+                {
+                    orangeNote17.Top = -1930;
+                    yellowNote4.Top = -1930;
+                }
+
+                else if (greenNote12.Top > 570)
+                    greenNote12.Top = -1930;
+
+                else if (redNote12.Top > 570)
+                    redNote12.Top = -1930;
+
+                else if (orangeNote18.Top > 570)
+                {
+                    orangeNote18.Top = -1930;
+                    yellowNote5.Top = -1930;
+                }
+
+                else if (greenNote13.Top > 570)
+                    greenNote13.Top = -1930;
+
+                else if (orangeNote19.Top > 570)
+                    orangeNote19.Top = -1930;
+
+                else if (blueNote16.Top > 570)
+                {
+                    blueNote16.Top = -1930;
+                    yellowNote6.Top = -1930;
+                }
+
+                else if (greenNote14.Top > 570)
+                {
+                    greenNote14.Top = -1930;
+                    redNote13.Top = -1930;
+                }
+            }
+
+            greenNote10.Top += noteSpeed;
+            greenNote11.Top += noteSpeed;
+            greenNote12.Top += noteSpeed;
+            greenNote13.Top += noteSpeed;
+            greenNote14.Top += noteSpeed;
+
+            redNote10.Top += noteSpeed;
+            redNote11.Top += noteSpeed;
+            redNote12.Top += noteSpeed;
+            redNote13.Top += noteSpeed;
+
+            yellowNote2.Top += noteSpeed;
+            yellowNote3.Top += noteSpeed;
+            yellowNote4.Top += noteSpeed;
+            yellowNote5.Top += noteSpeed;
+            yellowNote6.Top += noteSpeed;
+
+            blueNote12.Top += noteSpeed;
+            blueNote13.Top += noteSpeed;
+            blueNote14.Top += noteSpeed;
+            blueNote15.Top += noteSpeed;
+            blueNote16.Top += noteSpeed;
+
+            orangeNote10.Top += noteSpeed;
+            orangeNote11.Top += noteSpeed;
+            orangeNote12.Top += noteSpeed;
+            orangeNote13.Top += noteSpeed;
+            orangeNote14.Top += noteSpeed;
+            orangeNote15.Top += noteSpeed;
+            orangeNote16.Top += noteSpeed;
+            orangeNote17.Top += noteSpeed;
+            orangeNote18.Top += noteSpeed;
+            orangeNote19.Top += noteSpeed;
         }
 
         
-        private void notesReset()
+        //LOGICA PARA O JOGADOR
+        private void scorePlayer()
         {
-            greenNote1.Left = -500;
-            greenNote2.Left = -500;
-            greenNote3.Left = -500;
-            greenNote4.Left = -500;
-            greenNote5.Left = -500;
-            greenNote6.Left = -500;
-            greenNote7.Left = -500;
-            greenNote8.Left = -500;
-            greenNote9.Left = -500;
+            //verde
+            if (aPress && (greenNote1.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote2.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote3.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote4.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote5.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote6.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote7.Bounds.IntersectsWith(greenCheck.Bounds)))
+                PlayerPoints++;
 
-            redNote1.Left = -500;
-            redNote2.Left = -500;
-            redNote3.Left = -500;
-            redNote4.Left = -500;
-            redNote5.Left = -500;
-            redNote6.Left = -500;
-            redNote7.Left = -500;
-            redNote8.Left = -500;
-            redNote9.Left = -500;
+            else if (aPress && (!greenNote1.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                               !greenNote2.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                               !greenNote3.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                               !greenNote4.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                               !greenNote5.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                               !greenNote6.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                               !greenNote7.Bounds.IntersectsWith(greenCheck.Bounds)))
+                PlayerPoints--;
 
-            yellowNote1.Left = -500;
+            //vermelho
 
-            blueNote1.Left = -500;
-            blueNote2.Left = -500;
-            blueNote3.Left = -500;
-            blueNote4.Left = -500;
-            blueNote5.Left = -500;
-            blueNote6.Left = -500;
-            blueNote7.Left = -500;
-            blueNote8.Left = -500;
-            blueNote9.Left = -500;
-            blueNote10.Left = -500;
-            blueNote11.Left = -500;
+            if (sPress && (redNote1.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote2.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote3.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote4.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote5.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote6.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote7.Bounds.IntersectsWith(redCheck.Bounds)))
+                PlayerPoints++;
 
-            orangeNote1.Left = -500;
-            orangeNote2.Left = -500;
-            orangeNote3.Left = -500;
-            orangeNote4.Left = -500;
-            orangeNote5.Left = -500;
-            orangeNote6.Left = -500;
-            orangeNote7.Left = -500;
-            orangeNote8.Left = -500;
-            orangeNote9.Left = -500;
+            else if (sPress && (!redNote1.Bounds.IntersectsWith(redCheck.Bounds) &&
+                               !redNote2.Bounds.IntersectsWith(redCheck.Bounds) &&
+                               !redNote3.Bounds.IntersectsWith(redCheck.Bounds) &&
+                               !redNote4.Bounds.IntersectsWith(redCheck.Bounds) &&
+                               !redNote5.Bounds.IntersectsWith(redCheck.Bounds) &&
+                               !redNote6.Bounds.IntersectsWith(redCheck.Bounds) &&
+                               !redNote7.Bounds.IntersectsWith(redCheck.Bounds)))
+                PlayerPoints--;
+
+
+
+
+
+
+
+
+
+            scoreTxt.Text = PlayerPoints.ToString();
         }
 
+        private void keyisdown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+            {
+                aPress = true;
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                sPress = true;
+            }
+            if (e.KeyCode == Keys.J)
+            {
+                jPress = true;
+            }
+            if (e.KeyCode == Keys.K)
+            {
+                kPress = true;
+            }
+            if (e.KeyCode == Keys.L)
+            {
+                lPress = true;
+            }
+        }
+
+        private void keyisup(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+                aPress = false;
+
+            if (e.KeyCode == Keys.S)
+                sPress = false;
+
+            if (e.KeyCode == Keys.J)
+                jPress = false;
+
+            if (e.KeyCode == Keys.K)
+                kPress = false;
+
+            if (e.KeyCode == Keys.L)
+                lPress = false;
+        }
+
+        //RESET
+        private void notesReset()
+        {
+            greenNote1.Top = -500;
+            greenNote2.Top = -500;
+            greenNote3.Top = -500;
+            greenNote4.Top = -500;
+            greenNote5.Top = -500;
+            greenNote6.Top = -500;
+            greenNote7.Top = -500;
+            greenNote8.Top = -500;
+            greenNote9.Top = -500;
+            greenNote10.Top = -500;
+            greenNote11.Top = -500;
+            greenNote12.Top = -500;
+            greenNote13.Top = -500;
+            greenNote14.Top = -500;
+
+            redNote1.Top = -500;
+            redNote2.Top = -500;
+            redNote3.Top = -500;
+            redNote4.Top = -500;
+            redNote5.Top = -500;
+            redNote6.Top = -500;
+            redNote7.Top = -500;
+            redNote8.Top = -500;
+            redNote9.Top = -500;
+            redNote10.Top = -500;
+            redNote11.Top = -500;
+            redNote12.Top = -500;
+            redNote13.Top = -500;
+
+            yellowNote1.Top = -500;
+            yellowNote2.Top = -500;
+            yellowNote3.Top = -500;
+            yellowNote4.Top = -500;
+            yellowNote5.Top = -500;
+            yellowNote6.Top = -500;
+
+            blueNote1.Top = -500;
+            blueNote2.Top = -500;
+            blueNote3.Top = -500;
+            blueNote4.Top = -500;
+            blueNote5.Top = -500;
+            blueNote6.Top = -500;
+            blueNote7.Top = -500;
+            blueNote8.Top = -500;
+            blueNote9.Top = -500;
+            blueNote10.Top = -500;
+            blueNote11.Top = -500;
+            blueNote12.Top = -500;
+            blueNote13.Top = -500;
+            blueNote14.Top = -500;
+            blueNote15.Top = -500;
+            blueNote16.Top = -500;
+
+            orangeNote1.Top = -500;
+            orangeNote2.Top = -500;
+            orangeNote3.Top = -500;
+            orangeNote4.Top = -500;
+            orangeNote5.Top = -500;
+            orangeNote6.Top = -500;
+            orangeNote7.Top = -500;
+            orangeNote8.Top = -500;
+            orangeNote9.Top = -500;
+            orangeNote10.Top = -500;
+            orangeNote11.Top = -500;
+            orangeNote12.Top = -500;
+            orangeNote13.Top = -500;
+            orangeNote14.Top = -500;
+            orangeNote15.Top = -500;
+            orangeNote16.Top = -500;
+            orangeNote17.Top = -500;
+            orangeNote18.Top = -500;
+            orangeNote19.Top = -500;
+            orangeNote20.Top = -500;
+
+        }
     }
 }
 
