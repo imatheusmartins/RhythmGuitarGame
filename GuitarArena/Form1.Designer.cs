@@ -1051,7 +1051,6 @@ namespace GuitarArena
             this.Controls.Add(this.greenCheck);
             this.Name = "GuitarMain";
             this.Text = "Guitar";
-            this.Load += new System.EventHandler(this.GuitarMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.orangeCheck)).EndInit();

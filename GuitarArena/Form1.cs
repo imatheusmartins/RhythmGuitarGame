@@ -458,10 +458,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
             orangeNote19.Top += noteSpeed;
         }
 
-        private void GuitarMain_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //LOGICA PARA PONTUAÇÃO
         private void scorePlayer()
