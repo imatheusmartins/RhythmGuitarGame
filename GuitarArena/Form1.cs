@@ -48,9 +48,10 @@ namespace GuitarArena //atualizar a resolução do timer principal
                 preChorusPartTimer.Stop();
 
             else if (ticks == 51.625)
+            {
                 ChorusInit();
                 chorusPartTimer.Start();
-            
+            }
 
             //-------------------------------------------------------
 
@@ -186,13 +187,13 @@ namespace GuitarArena //atualizar a resolução do timer principal
             yellowNote4.Left = 368;
             yellowNote5.Left = 368;
             yellowNote6.Left = 368;
-            
+
             blueNote12.Left = 465;
             blueNote13.Left = 465;
             blueNote14.Left = 465;
             blueNote15.Left = 465;
             blueNote16.Left = 465;
-            
+
             orangeNote10.Left = 560;
             orangeNote11.Left = 560;
             orangeNote12.Left = 560;
@@ -203,7 +204,6 @@ namespace GuitarArena //atualizar a resolução do timer principal
             orangeNote17.Left = 560;
             orangeNote18.Left = 560;
             orangeNote19.Left = 560;
-            orangeNote20.Left = 560;
 
             #endregion;
 
@@ -227,7 +227,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
             redNote11.Top = -1290;      //7
 
             orangeNote13.Top = -1390;   //8
-                                        
+
             orangeNote14.Top = -1490;   //9
 
             //-------------------------------
@@ -256,7 +256,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
             yellowNote6.Top = -2540;
 
             greenNote14.Top = -2640;    //10
-            redNote13.Top = -2640;      
+            redNote13.Top = -2640;
         }
 
         //TIMERS ----------------------------
@@ -458,30 +458,48 @@ namespace GuitarArena //atualizar a resolução do timer principal
             orangeNote19.Top += noteSpeed;
         }
 
-        
-        //LOGICA PARA O JOGADOR
+        private void GuitarMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //LOGICA PARA PONTUAÇÃO
         private void scorePlayer()
         {
-            //verde
+            //Verde
             if (aPress && (greenNote1.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote2.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote3.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote4.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote5.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote6.Bounds.IntersectsWith(greenCheck.Bounds) ||
-                           greenNote7.Bounds.IntersectsWith(greenCheck.Bounds)))
+                           greenNote7.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote8.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote9.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote10.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote11.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote12.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote13.Bounds.IntersectsWith(greenCheck.Bounds) ||
+                           greenNote14.Bounds.IntersectsWith(greenCheck.Bounds)))
                 PlayerPoints++;
 
-            else if (aPress && (!greenNote1.Bounds.IntersectsWith(greenCheck.Bounds) &&
-                               !greenNote2.Bounds.IntersectsWith(greenCheck.Bounds) &&
-                               !greenNote3.Bounds.IntersectsWith(greenCheck.Bounds) &&
-                               !greenNote4.Bounds.IntersectsWith(greenCheck.Bounds) &&
-                               !greenNote5.Bounds.IntersectsWith(greenCheck.Bounds) &&
-                               !greenNote6.Bounds.IntersectsWith(greenCheck.Bounds) &&
-                               !greenNote7.Bounds.IntersectsWith(greenCheck.Bounds)))
+            if (aPress && (!greenNote1.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote2.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote3.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote4.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote5.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote6.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote7.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote8.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote9.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote10.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote11.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote12.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote13.Bounds.IntersectsWith(greenCheck.Bounds) &&
+                           !greenNote14.Bounds.IntersectsWith(greenCheck.Bounds)))
                 PlayerPoints--;
 
-            //vermelho
+            //Vermelho
 
             if (sPress && (redNote1.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote2.Bounds.IntersectsWith(redCheck.Bounds) ||
@@ -489,24 +507,130 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            redNote4.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote5.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote6.Bounds.IntersectsWith(redCheck.Bounds) ||
-                           redNote7.Bounds.IntersectsWith(redCheck.Bounds)))
+                           redNote7.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote8.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote9.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote10.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote11.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote12.Bounds.IntersectsWith(redCheck.Bounds) ||
+                           redNote13.Bounds.IntersectsWith(redCheck.Bounds)))
                 PlayerPoints++;
 
-            else if (sPress && (!redNote1.Bounds.IntersectsWith(redCheck.Bounds) &&
-                               !redNote2.Bounds.IntersectsWith(redCheck.Bounds) &&
-                               !redNote3.Bounds.IntersectsWith(redCheck.Bounds) &&
-                               !redNote4.Bounds.IntersectsWith(redCheck.Bounds) &&
-                               !redNote5.Bounds.IntersectsWith(redCheck.Bounds) &&
-                               !redNote6.Bounds.IntersectsWith(redCheck.Bounds) &&
-                               !redNote7.Bounds.IntersectsWith(redCheck.Bounds)))
+            if (sPress && (!redNote1.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote2.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote3.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote4.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote5.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote6.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote7.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote8.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote9.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote10.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote11.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote12.Bounds.IntersectsWith(redCheck.Bounds) &&
+                           !redNote13.Bounds.IntersectsWith(redCheck.Bounds)))
                 PlayerPoints--;
 
+            //Amarelo
 
+            if (jPress && (yellowNote1.Bounds.IntersectsWith(yellowCheck.Bounds) ||
+                           yellowNote2.Bounds.IntersectsWith(yellowCheck.Bounds) ||
+                           yellowNote3.Bounds.IntersectsWith(yellowCheck.Bounds) ||
+                           yellowNote4.Bounds.IntersectsWith(yellowCheck.Bounds) ||
+                           yellowNote5.Bounds.IntersectsWith(yellowCheck.Bounds) ||
+                           yellowNote6.Bounds.IntersectsWith(yellowCheck.Bounds)))
+                PlayerPoints++;
 
+            if (jPress && (!yellowNote1.Bounds.IntersectsWith(yellowCheck.Bounds) &&
+                           !yellowNote2.Bounds.IntersectsWith(yellowCheck.Bounds) &&
+                           !yellowNote3.Bounds.IntersectsWith(yellowCheck.Bounds) &&
+                           !yellowNote4.Bounds.IntersectsWith(yellowCheck.Bounds) &&
+                           !yellowNote5.Bounds.IntersectsWith(yellowCheck.Bounds) &&
+                           !yellowNote6.Bounds.IntersectsWith(yellowCheck.Bounds)))
+                PlayerPoints--;
 
+            //Azul
 
+            if (kPress && (blueNote1.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote2.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote3.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote4.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote5.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote6.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote7.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote8.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote9.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote10.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote11.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote12.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote13.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote14.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote15.Bounds.IntersectsWith(blueCheck.Bounds) ||
+                           blueNote16.Bounds.IntersectsWith(blueCheck.Bounds)))
+                PlayerPoints++;
 
+            if (kPress && (!blueNote1.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote2.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote3.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote4.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote5.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote6.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote7.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote8.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote9.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote10.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote11.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote12.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote13.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote14.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote15.Bounds.IntersectsWith(blueCheck.Bounds) &&
+                           !blueNote16.Bounds.IntersectsWith(blueCheck.Bounds)))
+                PlayerPoints--;
 
+            //Laranja
+
+            if (lPress && (orangeNote1.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote2.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote3.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote4.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote5.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote6.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote7.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote8.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote9.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote10.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote11.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote12.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote13.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote14.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote15.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote16.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote17.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote18.Bounds.IntersectsWith(orangeCheck.Bounds) ||
+                           orangeNote19.Bounds.IntersectsWith(orangeCheck.Bounds)))
+                PlayerPoints++;
+
+            if (lPress && (!orangeNote1.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote2.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote3.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote4.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote5.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote6.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote7.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote8.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote9.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote10.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote11.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote12.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote13.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote14.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote15.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote16.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote17.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote18.Bounds.IntersectsWith(orangeCheck.Bounds) &&
+                           !orangeNote19.Bounds.IntersectsWith(orangeCheck.Bounds)))
+                PlayerPoints--;
+            //fim da logica dos pontos.
 
 
             scoreTxt.Text = PlayerPoints.ToString();
@@ -515,25 +639,19 @@ namespace GuitarArena //atualizar a resolução do timer principal
         private void keyisdown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.A)
-            {
                 aPress = true;
-            }
+
             if (e.KeyCode == Keys.S)
-            {
                 sPress = true;
-            }
+
             if (e.KeyCode == Keys.J)
-            {
                 jPress = true;
-            }
+
             if (e.KeyCode == Keys.K)
-            {
                 kPress = true;
-            }
+
             if (e.KeyCode == Keys.L)
-            {
                 lPress = true;
-            }
         }
 
         private void keyisup(object sender, KeyEventArgs e)
@@ -629,8 +747,6 @@ namespace GuitarArena //atualizar a resolução do timer principal
             orangeNote17.Top = -500;
             orangeNote18.Top = -500;
             orangeNote19.Top = -500;
-            orangeNote20.Top = -500;
-
         }
     }
 }

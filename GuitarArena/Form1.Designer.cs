@@ -104,7 +104,6 @@ namespace GuitarArena
             this.orangeNote12 = new System.Windows.Forms.PictureBox();
             this.orangeNote13 = new System.Windows.Forms.PictureBox();
             this.orangeNote19 = new System.Windows.Forms.PictureBox();
-            this.orangeNote20 = new System.Windows.Forms.PictureBox();
             this.yellowNote3 = new System.Windows.Forms.PictureBox();
             this.yellowNote4 = new System.Windows.Forms.PictureBox();
             this.yellowNote5 = new System.Windows.Forms.PictureBox();
@@ -180,7 +179,6 @@ namespace GuitarArena
             ((System.ComponentModel.ISupportInitialize)(this.orangeNote12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orangeNote13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orangeNote19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orangeNote20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowNote3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowNote4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowNote5)).BeginInit();
@@ -910,16 +908,6 @@ namespace GuitarArena
             this.orangeNote19.TabIndex = 17;
             this.orangeNote19.TabStop = false;
             // 
-            // orangeNote20
-            // 
-            this.orangeNote20.Image = global::GuitarArena.Properties.Resources.orange_buttons;
-            this.orangeNote20.Location = new System.Drawing.Point(1287, 62);
-            this.orangeNote20.Name = "orangeNote20";
-            this.orangeNote20.Size = new System.Drawing.Size(70, 35);
-            this.orangeNote20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.orangeNote20.TabIndex = 17;
-            this.orangeNote20.TabStop = false;
-            // 
             // yellowNote3
             // 
             this.yellowNote3.Image = global::GuitarArena.Properties.Resources.yellow_buttons;
@@ -991,7 +979,6 @@ namespace GuitarArena
             this.Controls.Add(this.orangeNote4);
             this.Controls.Add(this.orangeNote12);
             this.Controls.Add(this.orangeNote3);
-            this.Controls.Add(this.orangeNote20);
             this.Controls.Add(this.orangeNote18);
             this.Controls.Add(this.orangeNote19);
             this.Controls.Add(this.orangeNote9);
@@ -1064,6 +1051,7 @@ namespace GuitarArena
             this.Controls.Add(this.greenCheck);
             this.Name = "GuitarMain";
             this.Text = "Guitar";
+            this.Load += new System.EventHandler(this.GuitarMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
             ((System.ComponentModel.ISupportInitialize)(this.orangeCheck)).EndInit();
@@ -1135,7 +1123,6 @@ namespace GuitarArena
             ((System.ComponentModel.ISupportInitialize)(this.orangeNote12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orangeNote13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orangeNote19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orangeNote20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowNote3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowNote4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowNote5)).EndInit();
@@ -1221,7 +1208,6 @@ namespace GuitarArena
         private System.Windows.Forms.PictureBox orangeNote12;
         private System.Windows.Forms.PictureBox orangeNote13;
         private System.Windows.Forms.PictureBox orangeNote19;
-        private System.Windows.Forms.PictureBox orangeNote20;
         private System.Windows.Forms.PictureBox yellowNote3;
         private System.Windows.Forms.PictureBox yellowNote4;
         private System.Windows.Forms.PictureBox yellowNote5;
