@@ -67,6 +67,8 @@ namespace GuitarArena //atualizar a resolução do timer principal
 
             scorePlayer();
 
+            fireCheck();
+
         }
 
         //METODOS PARA INICIAR AS NOTAS: -----
@@ -633,6 +635,56 @@ namespace GuitarArena //atualizar a resolução do timer principal
             scoreTxt.Text = PlayerPoints.ToString();
         }
 
+        private void fireCheck()
+        {
+            if (aPress)
+            {
+                fireCheck1.Top = 501;
+                fireCheck1.Left = 191;
+            }
+
+            if (!aPress)
+                fireCheck1.Top = -501;
+
+            if (sPress)
+            {
+                fireCheck2.Top = 501;
+                fireCheck2.Left = 277;
+            }
+
+            if (!sPress)
+                fireCheck2.Top = -501;
+
+            if (jPress)
+            {
+                fireCheck3.Top = 501;
+                fireCheck3.Left = 370;
+            }
+
+            if (!jPress)
+                fireCheck3.Top = -501;
+
+            if (kPress)
+            {
+                fireCheck4.Top = 501;
+                fireCheck4.Left = 460;
+            }
+
+            if (!kPress)
+                fireCheck4.Top = -501;
+
+            if (lPress)
+            {
+                fireCheck5.Top = 501;
+                fireCheck5.Left = 552;
+            }
+
+            if (!lPress)
+                fireCheck5.Top = -501;
+
+
+        }
+
         private void keyisdown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.A)
@@ -744,7 +796,16 @@ namespace GuitarArena //atualizar a resolução do timer principal
             orangeNote17.Top = -500;
             orangeNote18.Top = -500;
             orangeNote19.Top = -500;
+
+            fireCheck1.Top = -500;
+            fireCheck2.Top = -500;
+            fireCheck3.Top = -500;
+            fireCheck4.Top = -500;
+            fireCheck5.Top = -500;
+
         }
+
+
     }
 }
 
