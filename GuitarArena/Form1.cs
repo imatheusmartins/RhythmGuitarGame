@@ -3,7 +3,7 @@ using System.Media;
 using System.Windows.Forms;
 
 
-namespace GuitarArena //atualizar a resolução do timer principal
+namespace GuitarArena 
 {
     public partial class GuitarMain : Form
     {
@@ -11,7 +11,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
         private double ticks = 0.000;
         private int intervalFirstPart1 = -660;
         private SoundPlayer _soundPlayer;
-        private int PlayerPoints;
+        private int PlayerPoints, PlayerLife;
         bool aPress, sPress, jPress, kPress, lPress, isGameOver;
 
         public GuitarMain()
@@ -64,12 +64,16 @@ namespace GuitarArena //atualizar a resolução do timer principal
 
             scorePlayer();
 
-            if (PlayerPoints <= 0)
+            if (PlayerLife <= 0)
                 GameOver();
             
-            
-            
             fireCheck();
+
+            //fim do jogo.
+
+            if (ticks == 124)
+                GameFinished();
+            
 
         }
 
@@ -462,7 +466,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
             orangeNote19.Top += noteSpeed;
         }
 
-        //LOGICA PARA PONTUAÇÃO
+        //LOGICA PARA PONTUAÇÃO e VIDA DO JOGADOR
         private void scorePlayer()
         {
             //Verde
@@ -480,7 +484,10 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            greenNote12.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote13.Bounds.IntersectsWith(greenCheck.Bounds) ||
                            greenNote14.Bounds.IntersectsWith(greenCheck.Bounds)))
+            {
                 PlayerPoints++;
+                PlayerLife++;
+            }
 
             if (aPress && (!greenNote1.Bounds.IntersectsWith(greenCheck.Bounds) &&
                            !greenNote2.Bounds.IntersectsWith(greenCheck.Bounds) &&
@@ -529,7 +536,10 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            redNote11.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote12.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote13.Bounds.IntersectsWith(redCheck.Bounds)))
+            {
                 PlayerPoints++;
+                PlayerLife++;
+            }
 
             if (sPress && (!redNote1.Bounds.IntersectsWith(redCheck.Bounds) &&
                            !redNote2.Bounds.IntersectsWith(redCheck.Bounds) &&
@@ -544,7 +554,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            !redNote11.Bounds.IntersectsWith(redCheck.Bounds) &&
                            !redNote12.Bounds.IntersectsWith(redCheck.Bounds) &&
                            !redNote13.Bounds.IntersectsWith(redCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
 
             if (!sPress && (redNote1.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote2.Bounds.IntersectsWith(redCheck.Bounds) ||
@@ -559,7 +569,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            redNote11.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote12.Bounds.IntersectsWith(redCheck.Bounds) ||
                            redNote13.Bounds.IntersectsWith(redCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
 
             //Amarelo
 
@@ -569,7 +579,11 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            yellowNote4.Bounds.IntersectsWith(yellowCheck.Bounds) ||
                            yellowNote5.Bounds.IntersectsWith(yellowCheck.Bounds) ||
                            yellowNote6.Bounds.IntersectsWith(yellowCheck.Bounds)))
+            {
                 PlayerPoints++;
+                PlayerLife++;
+            }
+                
 
             if (jPress && (!yellowNote1.Bounds.IntersectsWith(yellowCheck.Bounds) &&
                            !yellowNote2.Bounds.IntersectsWith(yellowCheck.Bounds) &&
@@ -577,7 +591,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            !yellowNote4.Bounds.IntersectsWith(yellowCheck.Bounds) &&
                            !yellowNote5.Bounds.IntersectsWith(yellowCheck.Bounds) &&
                            !yellowNote6.Bounds.IntersectsWith(yellowCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
 
             if (!jPress && (yellowNote1.Bounds.IntersectsWith(yellowCheck.Bounds) ||
                            yellowNote2.Bounds.IntersectsWith(yellowCheck.Bounds) ||
@@ -585,7 +599,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            yellowNote4.Bounds.IntersectsWith(yellowCheck.Bounds) ||
                            yellowNote5.Bounds.IntersectsWith(yellowCheck.Bounds) ||
                            yellowNote6.Bounds.IntersectsWith(yellowCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
 
             //Azul
 
@@ -605,7 +619,10 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            blueNote14.Bounds.IntersectsWith(blueCheck.Bounds) ||
                            blueNote15.Bounds.IntersectsWith(blueCheck.Bounds) ||
                            blueNote16.Bounds.IntersectsWith(blueCheck.Bounds)))
+            {
                 PlayerPoints++;
+                PlayerLife++;
+            }
 
             if (kPress && (!blueNote1.Bounds.IntersectsWith(blueCheck.Bounds) &&
                            !blueNote2.Bounds.IntersectsWith(blueCheck.Bounds) &&
@@ -623,7 +640,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            !blueNote14.Bounds.IntersectsWith(blueCheck.Bounds) &&
                            !blueNote15.Bounds.IntersectsWith(blueCheck.Bounds) &&
                            !blueNote16.Bounds.IntersectsWith(blueCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
 
             if (!kPress && (blueNote1.Bounds.IntersectsWith(blueCheck.Bounds) ||
                            blueNote2.Bounds.IntersectsWith(blueCheck.Bounds) ||
@@ -641,7 +658,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            blueNote14.Bounds.IntersectsWith(blueCheck.Bounds) ||
                            blueNote15.Bounds.IntersectsWith(blueCheck.Bounds) ||
                            blueNote16.Bounds.IntersectsWith(blueCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
             //Laranja
 
             if (lPress && (orangeNote1.Bounds.IntersectsWith(orangeCheck.Bounds) ||
@@ -663,7 +680,10 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            orangeNote17.Bounds.IntersectsWith(orangeCheck.Bounds) ||
                            orangeNote18.Bounds.IntersectsWith(orangeCheck.Bounds) ||
                            orangeNote19.Bounds.IntersectsWith(orangeCheck.Bounds)))
+            {
                 PlayerPoints++;
+                PlayerLife++;
+            }
 
             if (lPress && (!orangeNote1.Bounds.IntersectsWith(orangeCheck.Bounds) &&
                            !orangeNote2.Bounds.IntersectsWith(orangeCheck.Bounds) &&
@@ -684,7 +704,7 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            !orangeNote17.Bounds.IntersectsWith(orangeCheck.Bounds) &&
                            !orangeNote18.Bounds.IntersectsWith(orangeCheck.Bounds) &&
                            !orangeNote19.Bounds.IntersectsWith(orangeCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
 
             if (!lPress && (orangeNote1.Bounds.IntersectsWith(orangeCheck.Bounds) ||
                            orangeNote2.Bounds.IntersectsWith(orangeCheck.Bounds) ||
@@ -705,11 +725,14 @@ namespace GuitarArena //atualizar a resolução do timer principal
                            orangeNote17.Bounds.IntersectsWith(orangeCheck.Bounds) ||
                            orangeNote18.Bounds.IntersectsWith(orangeCheck.Bounds) ||
                            orangeNote19.Bounds.IntersectsWith(orangeCheck.Bounds)))
-                PlayerPoints--;
+                PlayerLife--;
             //fim da logica dos pontos.
 
 
             scoreTxt.Text = PlayerPoints.ToString();
+            lifePlayer.Text = PlayerLife.ToString();
+            if (PlayerLife > 50)
+                PlayerLife = 50;
         }
 
         private void fireCheck()
@@ -888,23 +911,29 @@ namespace GuitarArena //atualizar a resolução do timer principal
         private void resetGame()
         {
             notesReset();
-            PlayerPoints = 50;
+            PlayerLife = 50;
+            PlayerPoints = 0;
             ticks = 0.000;
             SongTimer.Start();
+            AvisoGameOver.Text = "";
             _soundPlayer = new SoundPlayer("Seven_Nation.wav");
-
-            
         }
 
         private void GameOver()
         {
-
             isGameOver = true;
+
             SongTimer.Stop();
             firstPart.Stop();
             preChorusPartTimer.Stop();
             chorusPartTimer.Stop();
             _soundPlayer.Stop();
+            AvisoGameOver.Text = "Você perdeu\nPressione Enter e tente novamente!";
+        }
+
+        private void GameFinished()
+        {
+            Close();
         }
     }
 }
